@@ -98,3 +98,8 @@ async def today_cmd(message: types.Message):
 # --- START ---
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
+
+@dp.message_handler()
+async def get_group_id(message: types.Message):
+    await message.reply(f"Group ID: {message.chat.id}")
+
